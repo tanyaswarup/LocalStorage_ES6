@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Crud (Local storage)</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,th{
+            height:30px;
+            padding: 3px;
+            text-align: center;
+            border:3px solid rgb(63, 119, 6);
+        }
+        th{
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        td{
+            font-size: 18px;
+        }
+        input{
+            padding: 8px;
+            text-align: center;
+            border: 2px solid black;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        
+        input:focus{
+            background-color: rgb(193, 219, 168);
+        }
+        button{
+            padding: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        form>button{
+            width: 150px;
+            margin-left: 10px;
+        }
+        button:hover{
+            background-color: rgb(193, 219, 168);
+        }
+        h1{
+            color: rgb(63, 119, 6);
+        }
+        p{
+            color: rgb(63, 119, 6);
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Add Bus:</h1> <p> (The table is empty, first add buses to create data)</p>
+    <form autocomplete="off" onsubmit="addBus(event)">
+        <input type="text" id="addName" placeholder="Name">
+        <input type="text" id="addSource" placeholder="Source">
+        <input type="text" id="addDest" placeholder="Destination">
+        <input type="number" id="addNum" placeholder="Number">
+        <input type="number" id="addPassenger" placeholder="Passenger Capacity">
+        <button type="submit">Add Bus</button>
+    </form>
+    <h1>Search:</h1>
+    <input type="text" id="searchSource" placeholder="Search By Source" onkeyup="searchBySource()">
+    <input type="text" id="searchDestination" placeholder="Search By Destination" onkeyup="searchByDestination()" >
+    <h1>Results:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Name</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Number</th>
+                <th>Passenger<br>Capacity</th>
+            </tr>
+        </thead>
+        <tbody id="data-row"> </tbody>
+    </table>
+    <script src="2_busCrud.js"></script>
+</body>
+</html>
